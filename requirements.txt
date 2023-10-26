@@ -1,0 +1,17 @@
+torch
+torchvision
+numpy
+tqdm
+tensorboard
+matplotlib
+pandas
+
+speechbrain~=0.5.12
+datasets
+torch_audiomentations
+editdistance
+wandb
+pyctcdecode
+torchaudio
+pillow
+pyrubberband
