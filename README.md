@@ -1,5 +1,16 @@
 # ASR project 
 
+Проект - домашнее задание hw_asr по курсу dla. Предназначен для разработки модели speech recognition. 
+
+____
+
+Структура репозитория напрямую заимствована из https://github.com/WrathOfGrapes/asr_project_template.git:
+
+- весь код лежит в ./hw_asr (аугментации, модели, трейнер, train.py, test.py, конфиги и т.д.)
+- в results лежат выходные файлы и ноутбук тест рана для финальной модели
+
+____
+
 Устанавливать библиотеки нужно с помощью requirements.txt. Dockerfile невалидный.
 
 Guide по установке:
@@ -12,13 +23,15 @@ pip install ./hw_asr/.
 
 Запуск train из hw_asr:
 ```
-python3 ./train.py -c <path to your config>
+python3 ./train.py -c <path to your config> -r <path to your checkpoint> -d <indices of GPUs>
 ```
 
 Запуск test из hw_asr:
 ```
-python3 ./test.py --resume <path to your checkpoint> -c <path to your test config>
+python3 ./test.py -r <path to your checkpoint> -c <path to your test config> -d <indices of GPUs> -o <name of ouput .json file>
 ```
+test.py считает предикты argmax и ctc_beam_search.
+
 ____
 
 Скачать финальную модель в папку ./final_model:
@@ -35,6 +48,7 @@ rm -rf final_model.zip
 ```
 
 Выдача test.py для модели находится в папке results (output-ы и ноутбук с запуском).
+
 Результаты:
 
 test-clean: wer (argmax) = 0.3384724309781591, wer (ctc_beam_search) = 0.32759457361201527, cer (argmax) = 0.11087391707763049, cer (ctc_beam_search) = 0.10782303549931747
@@ -45,10 +59,9 @@ test-other: wer (argmax) = 0.5609493959133318, wer (ctc_beam_search) = 0.5548816
 
 ____
 
-W&B Report: ... .
+W&B Report: https://api.wandb.ai/links/team-from-wonderland/cn2m5f4j .
 
+____
 
-
-
-
+Выполнила Ахматова Аня, группа 201.
 

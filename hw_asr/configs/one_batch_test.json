@@ -88,6 +88,8 @@
     }
   },
   "trainer": {
+    "batch_size": 10,
+    "train_dataset_bs": 10,
     "epochs": 50,
     "save_dir": "saved/",
     "save_period": 5,
